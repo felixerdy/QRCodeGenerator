@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
+#include <ctime>
 
-#include "../src/qrcode.h"
+#include "../src/QRCodeGenerator.h"
 #include "QrCode.hpp"
 
 static uint32_t check(const qrcodegen::QrCode &nayuki, QRCode *ricmoo) {
@@ -22,7 +23,7 @@ static uint32_t check(const qrcodegen::QrCode &nayuki, QRCode *ricmoo) {
 }
 
 int main() {
-    std::clock_t t0, totalNayuki, totalRicMoo;
+    clock_t t0, totalNayuki, totalRicMoo;
 
     int total = 0, passed = 0;
     for (char version = 1; version <= 40; version++) {
@@ -58,15 +59,15 @@ int main() {
                         data = (char*)"1234";
                         break;
                 }
-                t0 = std::clock();
+                t0 = clock();
                 const qrcodegen::QrCode nayuki = qrcodegen::QrCode::encodeText(data, version, *errCorLvl);
-                totalNayuki += std::clock() - t0;
+                totalNayuki += clock() - t0;
 
-                t0 = std::clock();
+                t0 = clock();
                 QRCode ricmoo;
                 uint8_t ricmooBytes[qrcode_getBufferSize(version)];
                 qrcode_initText(&ricmoo, ricmooBytes, version, ecc, data);
-                totalRicMoo += std::clock() - t0;
+                totalRicMoo += clock() - t0;
 
                 uint32_t badModules = check(nayuki, &ricmoo);
                 if (badModules) {

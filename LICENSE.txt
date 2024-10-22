@@ -1,10 +1,13 @@
 The MIT License (MIT)
 
-This library is written and maintained by Richard Moore.
-Major parts were derived from Project Nayuki's library.
+This library is maintained by Felix Erdmann.
+Major parts were derived from Richard Moore's library which uses parts from Project Nayuki's library.
+We used work from https://github.com/harriebird
 
-Copyright (c) 2017 Richard Moore     (https://github.com/ricmoo/QRCode)
-Copyright (c) 2017 Project Nayuki    (https://www.nayuki.io/page/qr-code-generator-library)
+Copyright (c) 2024 Felix Erdmann     (https://github.com/felixerdy/QRCodeGenerator)
+Copyright (c) 2024 harriebird        (https://github.com/harriebird/QRCodeGenerator)
+Copyright (c) 2024 Richard Moore     (https://github.com/ricmoo/QRCode)
+Copyright (c) 2024 Project Nayuki    (https://www.nayuki.io/page/qr-code-generator-library)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
